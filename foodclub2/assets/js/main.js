@@ -36,7 +36,8 @@ $('#registration-form').submit(function(e){
             'address'   : $('#registration-form #address').val(),
             'zip'       : $('#registration-form #zip').val(),
             'city'      : $('#registration-form #city').val(),
-            'program'   : $('#registration-form #program').val()
+            'company'   : $('#registration-form #company').val(),
+			'comments'   : $('#registration-form #comments').val()
     };
 
     $.ajax({
@@ -46,17 +47,11 @@ $('#registration-form').submit(function(e){
             dataType  : 'json',
             success   : function(data) {
                             if (data.success) {
-                                $('#registration-msg .alert').html("Registration Successful");
-                                $('#registration-msg .alert').removeClass("alert-danger");
-                                $('#registration-msg .alert').addClass("alert-success");
-                                $('#registration-msg').show();
+                               
                             }
                             else
                             {
-                                $('#registration-msg .alert').html("Registration Failed");
-                                $('#registration-msg .alert').removeClass("alert-success");
-                                $('#registration-msg .alert').addClass("alert-danger");
-                                $('#registration-msg').show();
+                               
                             }
                         }
         });
