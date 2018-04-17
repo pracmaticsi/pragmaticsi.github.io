@@ -12,18 +12,19 @@
 	$company    	= $_POST['company'];
 	$comments    	= $_POST['comments'];
 
-	$message     	= "The following participant has been registered: \n \nFirst Name: $fname, \nLast Name: $lname, \nEmail: $email, \nCell: $cell, \nAddress: $address, \nZip Code: $zip, \nCity: $city, \nCompany: $company, \nComments: $comments, \n \nThank you very much \nThe Air Liquide Organization Team";
+	$message     	= "Sehr geehrte Damen und Herren, \n \nVielen Dank für Ihre Anmeldung zum food club Event vom 19.-20. September 2018 in Quarkenbrück. \n \nBei Fragen oder Anregungen stehen wir Ihnen jederzeit zur Verfügung. \n \nVorname: $fname, \nNachname: $lname, \nEmail: $email, \nTelefon: $cell, \nAddress: $address, \nPLZ: $zip, \nStadt: $city, \nFirma: $company, \nKommentar: $comments, \n  \nMit freundlichen Grüßen, \n \nDas Food Club Team";
 	
-	$headers  = "From: Thierry Ollivero < thierry.ollivero@airliquide.com >\n";
+	$headers  = "From: Food Club DE < contact@food-club.de >\n";
     $headers .= "Cc: " .$email. "\n"; 
-    $headers .= "X-Sender: Thierry Ollivero < thierry.ollivero@airliquide.com >\n";
+	$headers .= "BCc: Thierry Ollivero < thierry.ollivero@airliquide.com >\n";
+    $headers .= "X-Sender: Food Club DE < contact@food-club.de >\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
     $headers .= "X-Priority: 1\n"; // Urgent message!
-    $headers .= "Return-Path: thierry.ollivero@airliquide.com\n"; // Return path for errors
+    $headers .= "Return-Path: contact@food-club.de\n"; // Return path for errors
     $headers .= "MIME-Version: 1.0\r\n";
    
 	
-	if(mail('thierry.ollivero@airliquide.com', "Participation to the Food Club", $message, $headers))
+	if(mail('contact@food-club.de', "Ihre Teilnahme am Food Club ", $message, $headers))
 		$form_data['success'] = true;
 	else
 		$form_data['success'] = false;
